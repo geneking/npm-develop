@@ -8,15 +8,15 @@ program
 
 program
   .command('init [project]')
-  .description('init project...')
+  .description('init project')
   .action(function(project){
       init.run(project);
   });
 
 program
     .command('start')
-    .description('start project...')
-    .option('-p, --port [port]', 'listening port...')
+    .description('start project')
+    .option('-p, --port [port]', 'listening port')
     .action(function(port){
         start.run(port);
     });
