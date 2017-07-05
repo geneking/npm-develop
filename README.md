@@ -1,4 +1,3 @@
-[TOC]
 ## 一、注册npm账号
 * 怎么将代码提到github，大家都知道需要一个github账号
 * 同样，开发一个npm包，当然也需要一个npm账号，将npm包发布到npm的托管服务器
@@ -33,7 +32,7 @@ const hello = function(key){
 
 exports.hello     = hello;
 ```
-* init.js模块
+* src/init.js模块
 ```javascript
 const exec = require('child_process').exec;
 
@@ -46,7 +45,7 @@ exports.run = function(name) {
 
 ```
 
-* start.js模块
+* src/start.js模块
 ```javascript
 const express = require('express');
 const app     = express();
