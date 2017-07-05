@@ -1,3 +1,4 @@
+[TOC]
 ## 一、注册npm账号
 * 怎么将代码提到github，大家都知道需要一个github账号
 * 同样，开发一个npm包，当然也需要一个npm账号，将npm包发布到npm的托管服务器
@@ -6,7 +7,7 @@
 
 ## 二、开发npm包
 
-###1.目录构建
+### 1.目录构建
 * npm init
 * 项目结构：
 ```javascript
@@ -18,10 +19,9 @@
 ├── package.json  //包信息
 └── test          //测试用例
 ```
-<!--more-->
-##2.开发模块
+### 2.开发模块
 * 入口index.js模块
-非全局安装(npm install xxx)，则多有的函数接口都通过index.js暴露给外部调用
+非全局安装(npm install xxx)，则所有的函数接口都通过index.js暴露给外部调用
 ```javascript
 /**
 * Hello World
@@ -59,30 +59,30 @@ exports.run = function(options) {
 
 ```
 
-###3.配置全局命令
+### 3.配置全局命令
 bin目录下写配置代码
 * cli.js自定义命令，主要通过引入commander模块去处理，包括命令描述、参数及执行动作
 * king.js文件名称应与全局命令king保持一致，做命令的入口，具体看demo
 
 ## 三、发布npm包
-###1.npm login
+### 1.npm login
 ```bash
 npm login
 ```
-###2.npm publish
+### 2.npm publish
 ```bash
 npm publish
 ```
 ## 四、全局安装和局部安装
-###1.局部安装
+### 1.局部安装
 * 所有的函数功能接口都由index.js暴露给外部
 * src里面可以放功能代码，src --> index.js只做output，暴露给外部调用
-###2.全局安装
+### 2.全局安装
 * 包全局安装的情况，一般是做自动化工具，关键在于配置全局命令，与index.js无关
 * 通过bin目录下与全局命令相同的js文件(如king.js)处理command的输入【如：king start】
 
 ## 五、常见问题
-###1. npm publish出错
+### 1. npm publish出错
 ```javascript
 npm ERR! publish Failed PUT 403
 npm ERR! Darwin 16.0.0
@@ -101,10 +101,10 @@ npm ERR!     /Volumes/work/private/github/npm-develop/npm-debug.log
 ```
 没有更新package.json的版本号，每次的版本号必须大于上次，否则无法publish
 
-###2. 采用sudo npm publish
+### 2. 采用sudo npm publish
 password应该输入的是本机开机密码，非npm账号密码
 
-###3. 全局命令无效
+### 3. 全局命令无效
 package.json中的bin命令配置，属性值应该和脚本名称一致
 ```javascript
 "bin": {
